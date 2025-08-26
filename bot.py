@@ -8,8 +8,7 @@ import os
 def get_meme():
     response = requests.get('https://meme-api.com/gimme?count=1')  
     json_data = json.loads(response.text)
-    return json_data['url'] if 'url' in json_data else json_data['memes'][0]['url']
-
+    return json_data['url']
 
 class MyClient(discord.Client):
     async def on_ready(self):
