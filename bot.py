@@ -6,9 +6,8 @@ import os
 
 
 def get_meme():
-    response = requests.get('https://meme-api.com/gimme?count=1')  # Force single meme
+    response = requests.get('https://meme-api.com/gimme?count=1')  
     json_data = json.loads(response.text)
-    # The API sometimes returns a list if count>1, but now it's guaranteed single
     return json_data['url'] if 'url' in json_data else json_data['memes'][0]['url']
 
 
@@ -20,7 +19,7 @@ class MyClient(discord.Client):
         if message.author == self.user:
             return
 
-        if message.content.strip().lower() == '$meme':  # Safer matching
+        if message.content.strip().lower() == '$meme':  
             meme_url = get_meme()
             await message.channel.send(meme_url)
 
