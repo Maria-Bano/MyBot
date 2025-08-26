@@ -4,11 +4,10 @@ import json
 from dotenv import load_dotenv
 import os
 
-
 def get_meme():
-    response = requests.get('https://meme-api.com/gimme?count=1')  
+    response = requests.get('https://meme-api.com/gimme?count=1')
     json_data = json.loads(response.text)
-    return json_data['url']
+    return json_data['url'], json_data['title']  
 
 class MyClient(discord.Client):
     async def on_ready(self):
@@ -18,14 +17,15 @@ class MyClient(discord.Client):
         if message.author == self.user:
             return
 
-        if message.content.strip().lower() == '$meme':  
-            meme_url = get_meme()
-            await message.channel.send(meme_url)
+        if message.content.strip().lower() == '$meme':
+            meme_url, meme_title = get_meme()
 
+            embed = discord.Embed(title=meme_title, color=discord.Color.random())
+            embed.set_image(url=meme_url)
 
-intents = discord.Intents.default()
-intents.message_content = True
+            await message.channel.send(embed=embed)
 
-client = MyClient(intents=intents)
 load_dotenv()
-client.run(os.environ['DISCORD_TOKEN'])
+TOKEN = os.getenv("DISCORD_TOKEN")
+client = MyClient(intents=discord.Intents.all())
+client.run(TOKEN)
