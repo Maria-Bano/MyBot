@@ -5,9 +5,11 @@ from dotenv import load_dotenv
 import os
 
 def get_meme():
-    response = requests.get('https://meme-api.com/gimme?count=1')
+    response = requests.get('https://meme-api.com/gimme/1')  
     json_data = json.loads(response.text)
-    return json_data['url'], json_data['title']
+    
+    meme_url = json_data['memes'][0]['url']
+    return meme_url
 
 class MyClient(discord.Client):
     async def on_ready(self):
@@ -17,14 +19,12 @@ class MyClient(discord.Client):
         if message.author == self.user:
             return
 
-        if message.content.strip().lower() == '$meme':
-            meme_url, meme_title = get_meme()
-            embed = discord.Embed(title=meme_title, color=discord.Color.random())
-            embed.set_image(url=meme_url)
-            await message.channel.send(embed=embed)
+        if message.content.strip().lower() == '$meme':  
+            meme_url = get_meme()
+            await message.channel.send(meme_url)
 
 load_dotenv()
-TOKEN = os.getenv("DISCORD_TOKEN")
+TOKEN = os.getenv('DISCORD_TOKEN')
 
 intents = discord.Intents.default()
 intents.message_content = True
