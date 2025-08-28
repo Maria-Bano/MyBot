@@ -101,4 +101,4 @@ Your support keeps me motivated ❤️
 🔗 Connect With Me
 GitHub: Maria-Bano
 
-Discord: your_discord_username_here
+Discord: mariabano_._73458
