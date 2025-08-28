@@ -1,14 +1,14 @@
 # MyBot
 Created a discord meme bot
 
-# 🤖 MyBot — Your Ultimate Discord Companion
+# 🤖 MyBot , Your Ultimate Discord Companion
 
 ![Python](https://img.shields.io/badge/Python-3.11%2B-blue)
 ![Discord.py](https://img.shields.io/badge/discord.py-2.0%2B-green)
 ![License](https://img.shields.io/badge/license-MIT-purple)
 ![Contributions](https://img.shields.io/badge/contributions-welcome-orange)
 
-Welcome to **MyBot** 🎉 — a powerful and fun **Discord bot** built using **Python** and **Discord.py**.  
+Welcome to **MyBot** 🎉 , a powerful and fun **Discord bot** built using **Python** and **Discord.py**.  
 Whether you want moderation, automation, or entertainment, MyBot has you covered!  
 
 ---
@@ -34,35 +34,36 @@ cd MyBot
 
 
 
-2️⃣ Create a Virtual Environment (Recommended)
+### 2️⃣ Create a Virtual Environment (Recommended)
 
 python -m venv venv
 venv\Scripts\activate    # On Windows
 # OR
 source venv/bin/activate  # On Mac/Linux
-3️⃣ Install Required Dependencies
 
+
+### 3️⃣ Install Required Dependencies
 pip install -r requirements.txt
 Note: If you don't have a requirements.txt yet, you can create one:
-
 pip freeze > requirements.txt
-4️⃣ Configure Environment Variables
+
+
+
+### 4️⃣ Configure Environment Variables
 Create a .env file in the root directory and add your Discord Bot Token:
-
 DISCORD_TOKEN=your_discord_bot_token_here
-5️⃣ Run the Bot 🚀
 
+
+
+### 5️⃣ Run the Bot 🚀
 python bot.py
 🎮 Usage
 Once the bot is running, invite it to your Discord server and try these commands:
 
 Command	Description
-!hello	Greets the user 👋
-!ping	Checks bot latency 🏓
-!joke	Tells a random joke 😂
-!help	Shows the help menu 📜
+$meme
 
-📁 Project Structure
+### 📁 Project Structure
 
 MyBot/
 ├── bot.py              # Main bot script
@@ -70,35 +71,29 @@ MyBot/
 ├── requirements.txt    # Python dependencies
 ├── README.md           # Project documentation
 └── assets/             # Images, logos, etc.
-🤝 Contributing
+
+# 🤝 Contributing
 Contributions are welcome! 🙌
 If you’d like to improve MyBot, follow these steps:
 
-Fork the repo
-
-Create a new branch:
-
-
+### Fork the repo
+# 1.Create a new branch:
 git checkout -b feature-new-command
-Commit your changes:
-
-
+# 2.Commit your changes:
 git commit -m "Added a new command"
-Push to your branch:
-
-
+# 3.Push to your branch:
 git push origin feature-new-command
-Submit a Pull Request
+# 4.Submit a Pull Request
 
-📜 License
+### 📜 License
 This project is licensed under the MIT License.
 You are free to use, modify, and distribute this bot.
 
-🌟 Show Your Support
+# 🌟 Show Your Support
 If you like this project, give it a ⭐ on GitHub and share it with your friends!
 Your support keeps me motivated ❤️
 
-🔗 Connect With Me
+# 🔗 Connect With Me
 GitHub: Maria-Bano
 
 Discord: mariabano_._73458
